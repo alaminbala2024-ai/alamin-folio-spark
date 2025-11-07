@@ -53,12 +53,13 @@ export const Projects = () => {
               className="card-hover overflow-hidden border-2"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden group">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-2"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
@@ -77,15 +78,15 @@ export const Projects = () => {
                 </div>
               </CardContent>
               <CardFooter className="gap-4">
-                <Button variant="default" size="sm" asChild>
+                <Button variant="default" size="sm" asChild className="group">
                   <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-4 w-4 mr-2" />
+                    <ExternalLink className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform" />
                     Demo
                   </a>
                 </Button>
-                <Button variant="outline" size="sm" asChild>
+                <Button variant="outline" size="sm" asChild className="group">
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 mr-2" />
+                    <Github className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
                     Code
                   </a>
                 </Button>
